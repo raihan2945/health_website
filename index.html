@@ -15,6 +15,32 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Surokkha</title>
+
+    <!-- <script>
+      alert("hello")
+      let submit_button = document.getElementById("submit_button");
+      let input_init = document.getElementById("input_id");
+
+      console.log("submit button",submit_button)
+
+      const myInit = {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(input_init.value),
+      };
+
+      submit_button.addEventListener("click", function () {
+        alert("done")
+        fetch("https://jsonplaceholder.typicode.com/posts/1", myInit)
+          .then((response) => response.json(
+            // alert("done")
+          ))
+          .then((data) => console.log(data));
+      });
+    </script> -->
   </head>
   <body>
     <nav
@@ -45,7 +71,12 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
                   >Health Card
                 </a>
               </li>
@@ -65,60 +96,8 @@
 
     <div class="su-main-banner-area">
       <div class="container">
-        
         <div class="su-h-banner-cards">
           <h1 class="banner-text">Bangladesh Student Health Record</h1>
-          <!-- <div class="su-banner-large-cards">
-            <a class="su-h-reg-card" href="/enroll"
-              ><div class="h-reg-cards-top">
-                <img
-                  class="img-fluid"
-                  src="data:image/png;base64,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"
-                />
-                <h4 class="text-left ml-3">
-                  <strong>ভ্যাকসিনের জন্য নিবন্ধন করুন</strong>
-                </h4>
-              </div>
-              <div class="h-reg-cards-bottom text-center">
-                <h6 class="mb-3"><strong>নিবন্ধনের সময় প্রয়োজন হবে</strong></h6>
-                <img
-                  class="img-fluid-2"
-                  src="data:image/png;base64,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"
-                /></div
-            ></a>
-          </div> -->
-          <!-- <div class="su-banner-small-cards">
-            <a
-              class="su-h-banner-card-single card-status"
-              href="/vaccine-status"
-              ><img
-                class="img-fluid"
-                src="data:image/png;base64,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"
-              />
-              <p><strong>নিবন্ধন স্ট্যাটাস</strong></p></a
-            ><a
-              class="su-h-banner-card-single card-collect"
-              href="/vaccine-card"
-              ><img
-                class="img-fluid"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAAoCAYAAACvpem4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPxSURBVHgB5ZppUhNBGIbfmYAEZAdZpCiCFFXkl3AC4QTgCcATACcwnCDxBMIJ1BOQG4QfVsWlMFgUIgpkYSkiMGO/Aw2dgZDOhJgEn6rU7FPz9rf0190xcAuxGNr9LZiBgQBqCNPGmnWKtWAQG+5rhnpAgU2tCNsG5lDDCMGRowyWJiaQkueuhMbjCBgNWBW7ATwMNuwspqR1HaG0ZGMbYlBENvon0SR+9fVDqHas8xTOrTQyh8s4Pdu4vmAgOjaMqYtdwZcEwpaNBe6bZjsGet85ImuRZCaCX3uL1ydsLI6NIGJyX4icked7O8M1K5J0tC6gqz10fcLArLOJf8Wk4XNiE/V1ATwbTKDWsawU1jeHnS155EfAVLuQhkfjKJbjkyg2t6fwTbz4c8LA960Jx3VyYuUfw/Cj0STZIwzXqTf4xA26sLW2f7/C4fH7nPMnf9acH8/3PXlbsTBwazHhkR1hNbdIFVp0a+clskJ0NeBJ6OHRByeVSzra5p3YHh1KOlaUbkOr52TAClIHDxwolmxrnkNPZyTnmO7KmCWMYVpXjZl88D424rmVgg7+hudobprRuteTUNUdW1tmb1ynKCY2eZ+uUC+uHhiIaSVRzzFaiGISWynP6Frfk0XpmrLlk+k3NzIrLUiXlehYkzC+0wcr0IWuq5vVPQltfjztlFqEmfen6GbowhSUER+6n8mNWV2hvK+74zXKgWeLstSSYtMiA6eVLCzhh3eV6cOLxXOM9nSFHbH5oMinYnCga81y48miEkes6EN3k0s4E3HJ2GQGbPK/QFvLnFOKVQslCSW0WL9IItVO2bqXaqNoi2Yvi3ZdaHG/cOdKu7G2UHYjpQy/usVguFAGZm18cMdAwQ0bUHdoqSV0TySb3VQIpcDn2ViD/at5rcsSUC00dNAtAQsKpZuqIvmRLZqFNJFFvXzXvqik8hUFuuWcl2cKCqU1JXSVuyySDzaUfA+LjE7RJd32Dk7KsaS0ND+e3di9lYCqK7EA8JJUGJ8cfjGRUYTsb90wcbFvLgcFuxe1dUupctSRiRcXLZX/ph8tKFS6aqk1a12Fa96CMcrkkxIJ4raZhGJgpqX7comjEjODBYUy0/bdQy1bzkSjQ47rViJJlAu3FhM+ROUBuxLrAYhl96VOsgVHETWDw2L90LgQS5G7SoFQq/wQpaTEMLDMreO69hmu1LFy4RxQJddOvEKP5NqPOrqycKHtasX70zoi4mhefZBdi6+KZgnugjHpDjvbxlJwBCHu5/yHIb6OkDB1dcxmlcrlArA8NNzXPyYw7hOr38Knp22gNsx5iRCTElZcsU1EnNyTey0/8URt/XHDLU7lL7kHnLetAncIAAAAAElFTkSuQmCC"
-              />
-              <p><strong>টিকা কার্ড সংগ্রহ</strong></p></a
-            ><a class="su-h-banner-card-single card-file" href="/certificate"
-              ><img
-                class="img-fluid"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAAA1CAYAAADRarJRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASxSURBVHgB7ZpfaBRHHMd/s7k0V6gxhbZUjO0Gcm0sDebAtg/2wcvZh/ahbdKnCm3P10LAPOVPHxof9E4oaEmhjzGt0DfT9sFC9TwF8xAVDESIeieu/1BEMP4Bc+ay4/w2mb3JXvacu53ZgPiBvZvdzNx+5ze/nd9vZkNAIJZNp4CQH1jRhNqwFop0l/X5kAUhQnghlsuMAYUU1A92IBFmBwz8cCweTDhiNjaRnPlf2oSQcCwfO5E+z4pdWE61boXvN22VavzHjXNw6OY57+XQRiCy9LUkHBmOJUGWdZGm1S7zEdDeAQMU0fHaW2JnQnEhZeI/eyMGh+M7Q+2AMvHIZmb9MDugVDwSZgeUi0fC6oAW8UgYHYiAIo7cuQBTczcqrjdHovCoVOSnSqdRZeJvzT9wDgnMV5rIQfb9NQQkkNtsfHU91IMNUF9DD4Es3/t2J2yMyumYfXQX9hWyoJLAbvNJyzuwVmibbcLgpfi14qX4tUJZkKoFAqSl/Vh6O5ZLj4vTVs/IHNRBKJafmrsOo1cnhSu0izSQHB6N66P3YycyOWcdXSPLa9gM5RcuJwZAFZguDMwehTNMvCSWbdv9V3YM/y1TWZvl0dpfnh2rEN4abWaBbZNzYObpwTQMY+K93P6fZe6hxednH9+F787/5Z5jWpxiOxI9LJ1o9aQTODrcrXhiRykdeT+7/8Gl5MDBavdRbnkU8OPMEfccc59/P9oFfeanFcL53zFHOhz/1lnEc2xCD8T+39tV7V7KxWNezy2IwlCUTPK2VHfnig5ApOFAtTbqxd+ecct9bduks06kmbnX75294qXtbZO/vOtXX6l49F3R6ugOtYLtPhYy1Yb5xR6/ukrF33pSXkl9UDmTSLPjzZhbJgbd4lePi7f4hZXBpDbEZWBHAPGtTWVXIxRe96vnTJVsahonhDhz66h12jmCIrmeDYRj+UJyaIR1YRoUcnP+IdTLsXt5t2xTf12uz+e7h+JsBPaA4EJBwMg6JZ8WuOA2yYqobMNJv7oEFNOey0wwP3W2NTD8/8MCVC2MWpPsuXPd1sp3D7b51VU+z0eA9vMypgmYmMniEY4P455q9ZVbHmnP7ttNiOFGR5y7M5u/8N1pwId7bz4LxwVfZ8oO5RODVYdNi3ikPZse4TMYB90IAxB2BqMpjgwelSkznV4gxYSVqL5I0SYe8Y6ADGx2+fVKcmi3TF2tK6lCchhTWquWNna0UbqzYaxhTV74k2WYZ+6vzH/wwDeKF5n7OIKeFjGiXpP5Ya3iO3Jpc3F5gYki8YFd7aFFn+fibdvAHF4qYGp1m1KpbHVc/vmxju3hc0gN/zqgVTwxykKaBYFexK1yYhDf/N2LVrdhHmPy6YxnmeJ6tc/cBr0bOqWzSC9axRNStjxlDoGBaFx43T948ajzKuibDR9CuR5skf19zbNN2QV+80mzJ+7MsMh6WWzTApJo3jGjqwph1j3JPsf5ufDCzWlTbd0qolk88WxdkDlKSX+hezDBUvAUkMU4rBLEluf65xLaLjFae4HY8YKwkZRP/DSNKS/1ZI+0ZEi5jtbcBjdPKRhfUbo4/rz9RwxoJUrGWBp8amll94LzDKWPwmu52nR3AAAAAElFTkSuQmCC"
-              />
-              <p><strong>টিকা সনদ সংগ্রহ</strong></p></a
-            ><a class="su-h-banner-card-single card-question" href="/faq"
-              ><img
-                class="img-fluid"
-                src="data:image/png;base64,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"
-                alt=""
-              />
-              <p><strong>সচরাচর জিজ্ঞাসা</strong></p></a
-            >
-          </div> -->
         </div>
       </div>
     </div>
@@ -126,7 +105,6 @@
     <div class="su-h-cta-area">
       <div class="container su-h-center">
         <div class="su-h-cta-main">
-
           <div class="su-h-cta-single">
             <a href="tel:333"
               ><span class="cta-number">2</span
@@ -163,20 +141,15 @@
           </div>
           <div class="col-12 col-md-2">
             <ul class="list-footer text-small mb-5">
-              <li><a class="footer-link" href="/faq">Home 
-                </a></li>
-              <li><a class="footer-link" href="/help">Health Card 
-               </a></li>
+              <li><a class="footer-link" href="/faq">Home </a></li>
+              <li><a class="footer-link" href="/help">Health Card </a></li>
               <li>
-                <a class="footer-link" href="/privacy-policy"
-                  > Health Details
-                  </a
-                >
+                <a class="footer-link" href="/privacy-policy">
+                  Health Details
+                </a>
               </li>
               <li>
-                <a class="footer-link" href="/terms-of-service"
-                  >Dashboard</a
-                >
+                <a class="footer-link" href="/terms-of-service">Dashboard</a>
               </li>
             </ul>
           </div>
@@ -216,6 +189,7 @@
           <div class="modal-body">
             <form class="form-group">
               <input
+              id="input_id"
                 class="form-control"
                 type="text"
                 placeholder="Enter your id"
@@ -231,11 +205,16 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button id="submit_button" type="button" class="btn btn-primary">
+              Submit
+            </button>
           </div>
         </div>
       </div>
     </div>
+
+
+    <script src="./main.js"></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
