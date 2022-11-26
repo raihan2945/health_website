@@ -46,9 +46,10 @@
 
   .su-h-banner-cards {
     max-width: 100%;
+    /* max-width: 750px; */
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding-bottom: 50px;
     min-height: 600px;
@@ -61,7 +62,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: space-between; */
+    justify-content: space-between;
+    /* justify-content: center; */
 }
 
 .su-h-reg-card {
