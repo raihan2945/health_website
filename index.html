@@ -59,7 +59,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">
+                <a class="nav-link"
+                   aria-current="page"
+                   href="#"
+                   data-bs-toggle="modal"
+                   data-bs-target="#exampleModalDetails">
                   Health Details
                 </a>
               </li>
@@ -192,6 +196,51 @@
     </div>
 
 
+    <div
+            class="modal fade"
+            id="exampleModalDetails"
+            tabindex="-1"
+            aria-labelledby="exampleModalDetailsLabel"
+            aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalDetailsLabel">Submit ID</h1>
+            <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form class="form-group">
+              <input
+                      id="input_student_id_details"
+                      class="form-control"
+                      type="text"
+                      placeholder="Enter your id"
+                      aria-label="default input example"
+              />
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button id="submit_button_details" type="button" class="btn btn-primary">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="./main.js"></script>
 
     <script
@@ -210,6 +259,12 @@
         var student_id = $("#input_student_id").val();
         window.location.href = `http://116.68.200.97:6036/student_information/print_preview/health_card/${student_id}`;
       });
+
+      $("#submit_button_details").click(function() {
+        var student_id = $("#input_student_id_details").val();
+        window.location.href = `http://116.68.200.97:6036/student_information/print_preview/health_details/${student_id}`;
+      });
+
     </script>
 
   </body>
