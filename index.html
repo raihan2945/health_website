@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-X6Q20VXR5J"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <title>Student Health</title>
+
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light"
+      style="background-color: #f8f9fa !important"
+    >
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" href="#">
+          <img src="./assets/logo.png" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+          <form class="d-flex" role="search">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  >Health Card
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"
+                   aria-current="page"
+                   href="#"
+                   data-bs-toggle="modal"
+                   data-bs-target="#exampleModalDetails">
+                  Health Details
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="http://116.68.200.97:6036/dashboard_report"> Dashboard </a>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="su-main-banner-area">
+      <div class="container">
+        <div class="su-h-banner-cards">
+          <h1 class="banner-text">Bangladesh Student Health Record</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="su-h-cta-area">
+      <div class="container su-h-center">
+        <div class="su-h-cta-main">
+          <div class="su-h-cta-single">
+            <a href="tel:333"
+              ><span class="cta-number">2</span
+              ><span class="cta-text">School</span></a
+            >
+          </div>
+          <div class="su-h-cta-single">
+            <a href="tel:16263"
+              ><span class="cta-number">700</span
+              ><span class="cta-text">Student</span></a
+            >
+          </div>
+          <div class="su-h-cta-single">
+            <a href="tel:10655"
+              ><span class="cta-number">400</span
+              ><span class="cta-text">Male </span></a
+            >
+          </div>
+          <div class="su-h-cta-single">
+            <a href="tel:09666777222"
+              ><span class="cta-number">300</span
+              ><span class="cta-text">Female</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="su-main-footer-area no-print">
+      <div class="container mt-5">
+        <div class="row text-left">
+          <div class="col-12 col-md-2 su-footer-logo mb-3">
+            <!-- <img src="./assets/footer_logo.svg" alt="Surokkha" /> -->
+          </div>
+          <div class="col-12 col-md-2">
+            <ul class="list-footer text-small mb-5">
+              <li><a class="footer-link" href="/faq">Home </a></li>
+              <li><a class="footer-link" href="/help">Health Card </a></li>
+              <li>
+                <a class="footer-link" href="/privacy-policy">
+                  Health Details
+                </a>
+              </li>
+              <li>
+                <a class="footer-link" href="/terms-of-service">Dashboard</a>
+              </li>
+            </ul>
+          </div>
+          <!-- <div class="col-12 col-md-4 su-footer-l-col">
+            <p class="footer-text">
+              কারিগরি সহায়তায় - তথ্য ও যোগাযোগ প্রযুক্তি অধিদপ্তর &nbsp;
+            </p>
+            <img alt="" class="img-fluid" src="./assets/footer_2.png" />
+          </div> -->
+          <!-- <div class="col-12 col-md-4 pt-5 pt-md-0 su-footer-r-col">
+            <p class="footer-text">সহযোগী সংস্থাসমূহ -&nbsp;</p>
+            <img alt="" class="img-fluid" src="./assets/foonter_3.png" />
+          </div> -->
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Submit ID</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form class="form-group">
+              <input
+              id="input_student_id"
+                class="form-control"
+                type="text"
+                placeholder="Enter your id"
+                aria-label="default input example"
+              />
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button id="submit_button" type="button" class="btn btn-primary">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div
+            class="modal fade"
+            id="exampleModalDetails"
+            tabindex="-1"
+            aria-labelledby="exampleModalDetailsLabel"
+            aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalDetailsLabel">Submit ID</h1>
+            <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form class="form-group">
+              <input
+                      id="input_student_id_details"
+                      class="form-control"
+                      type="text"
+                      placeholder="Enter your id"
+                      aria-label="default input example"
+              />
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button id="submit_button_details" type="button" class="btn btn-primary">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $("#submit_button").click(function() {
+        var student_id = $("#input_student_id").val();
+        window.location.href = `http://116.68.200.97:6036/student_information/print_preview/health_card/${student_id}`;
+      });
+
+      $("#submit_button_details").click(function() {
+        var student_id = $("#input_student_id_details").val();
+        window.location.href = `http://116.68.200.97:6036/student_information/print_preview/health_details/${student_id}`;
+      });
+
+    </script>
+
+  </body>
+</html>
