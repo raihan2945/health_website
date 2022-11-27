@@ -208,10 +208,25 @@
     <script>
       $("#submit_button").click(function() {
         var student_id = $("#input_student_id").val();
-        console.log(student_id)
-        $.get( `http://116.68.200.97:6036/api/health_card/${student_id}`, function( data ) {
-          console.log(data)
+        // console.log(student_id)
+        // $.get( `http://116.68.200.97:6036/api/health_card/${student_id}`, function( data ) {
+        //   console.log(data)
+        // });
+
+        $.ajax({
+          type: "GET",
+          url: `http://116.68.200.97:6036/api/health_card/${student_id}`,
+          dataType: "jsonp",
+          crossDomain: true,
+          contentType: "application/json; charset=utf-8",
+          success: function (result) {
+            JSON.stringify(result)
+          },
+          error: function (xhr, status, error) {
+            console.log('error: ', error);
+          }
         });
+
       });
     </script>
 
