@@ -14,33 +14,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Surokkha</title>
 
-    <!-- <script>
-      alert("hello")
-      let submit_button = document.getElementById("submit_button");
-      let input_init = document.getElementById("input_id");
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
-      console.log("submit button",submit_button)
+    <title>Student Health</title>
 
-      const myInit = {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(input_init.value),
-      };
-
-      submit_button.addEventListener("click", function () {
-        alert("done")
-        fetch("https://jsonplaceholder.typicode.com/posts/1", myInit)
-          .then((response) => response.json(
-            // alert("done")
-          ))
-          .then((data) => console.log(data));
-      });
-    </script> -->
   </head>
   <body>
     <nav
@@ -189,7 +167,7 @@
           <div class="modal-body">
             <form class="form-group">
               <input
-              id="input_id"
+              id="input_student_id"
                 class="form-control"
                 type="text"
                 placeholder="Enter your id"
@@ -226,5 +204,16 @@
       integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      $("#submit_button").click(function() {
+        var student_id = $("#input_student_id").val();
+        console.log(student_id)
+        $.get( `http://116.68.200.97:6036/api/health_card/${student_id}`, function( data ) {
+          console.log(data)
+        });
+      });
+    </script>
+
   </body>
 </html>
